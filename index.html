@@ -2,21 +2,20 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Momentum</title>
 </head>
 <body>
     <form id="login-form" class="hidden">
         <input required maxlength="15" type="text" placeholder="What is your name?"> 
-        <!-- input의 유효성을 검사하기 위해서는 form>input의 형태로 작성해야 함/ reauired: 필수 / maxlegth: 최대 글자 수  -->
-        <!-- form안의 buttom을 클릭하거나, input type=submit 을 누르면 form이 submit되면서 새로고침됨 -->
         <button>Log In</button>
     </form>
-    <!-- <a href="https://nomadcoders.co">Go to courses</a> -->
+    <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
 
-    <script src="app4.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
