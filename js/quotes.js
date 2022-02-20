@@ -41,8 +41,11 @@ const quotes = [
     },
 ]
 
+const neonColor = ["rgb(248, 51, 160)", "rgb(43, 80, 245)", "rgb(51, 248, 205)", "rgb(248, 245, 51)", "rgb(51, 248, 61)", "rgb(160, 23, 240)", "rgb(248, 146, 51)"]
+
+
 const quote = document.querySelector("#quote span:first-child");
-const korean = document.querySelector("#quote span:last-child");
+// const korean = document.querySelector("#quote span:last-child");
 
 // Math.random()  // 0 ~ 1 사이의 무작위 수
 // Math.round(1.1) // 1.1 => 1, 1.8 => 2 // 반올림하여 소수점 삭제
@@ -53,4 +56,28 @@ const korean = document.querySelector("#quote span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)]; // 배열의 길이를 숫자로 적으면 추가, 삭제시 값을 수동으로 수정해야하기 때문에 length 사용
 
 quote.innerText = todaysQuote.quote;
-korean.innerText = todaysQuote.korean;
+// korean.innerText = todaysQuote.korean;
+
+function neonOn() {
+    // quote.classList.toggle("neon");
+    const randomNeon = Math.floor(Math.random() * neonColor.length);
+    quote.style.textShadow = `
+        0 0 7px ${neonColor[randomNeon]},
+        0 0 10px ${neonColor[randomNeon]},
+        0 0 21px ${neonColor[randomNeon]},
+        0 0 42px ${neonColor[randomNeon]},
+        0 0 82px ${neonColor[randomNeon]},
+        0 0 92px ${neonColor[randomNeon]},
+        0 0 102px ${neonColor[randomNeon]},
+        0 0 151px ${neonColor[randomNeon]}
+    `;
+    quote.style.opacity = 1;
+}
+
+// function neonOff() {
+//     quote.style.textShadow = "none";
+//     quote.style.opacity = .5;
+// }
+
+quote.addEventListener("mouseenter", neonOn);
+// quote.addEventListener("mouseleave", neonOff);
